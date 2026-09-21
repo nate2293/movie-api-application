@@ -85,7 +85,7 @@ const Content = () => {
                 }}
                 className="mb-9 max-w-2xl text-center text-base leading-relaxed text-zinc-400 sm:text-lg md:text-lg md:leading-relaxed"
             >
-                Starts at just $9.99/month. Cancel at any time.
+                Starts at just £9.99/month. Cancel at any time.
             </motion.p>
 
             <motion.div

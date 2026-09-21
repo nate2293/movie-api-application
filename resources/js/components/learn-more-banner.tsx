@@ -47,12 +47,11 @@ export default function LearnMoreBanner() {
                         {/* TEXT */}
                         <div className="flex-1">
                             <h2 className="text-xl font-bold text-white md:text-2xl">
-                                Your next favourite movie is waiting.
+                                Try Standard with adverts today.
                             </h2>
 
                             <p className="mt-1 text-sm text-zinc-400 md:text-base">
-                                Discover trending movies, popular series and new
-                                releases all in one place.
+                                Change or cancel your plan at any time.
                             </p>
                         </div>
 
@@ -64,9 +63,9 @@ export default function LearnMoreBanner() {
                         </div> */}
 
                         <div className="shrink-0">
-                            <Link href="/learn-more">
+                            <Link href="/see-all-plans">
                                 <DrawOutlineButton className="flex items-center gap-2">
-                                    Learn more
+                                    Explore all plans
                                 </DrawOutlineButton>
                             </Link>
                         </div>
