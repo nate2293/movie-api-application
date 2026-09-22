@@ -405,21 +405,6 @@ Production secrets such as `TMDB_TOKEN` and `OPENAI_API_KEY` are configured thro
 
 ---
 
-
-Run the application's PHPUnit tests with:
-
-```bash
-php artisan test
-```
-
-The frontend production build can also be verified with:
-
-```bash
-npm run build
-```
-
----
-
 ## 🤝 Contributing
 
 Contributions and suggestions are welcome.
