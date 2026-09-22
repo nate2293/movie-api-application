@@ -405,7 +405,6 @@ Production secrets such as `TMDB_TOKEN` and `OPENAI_API_KEY` are configured thro
 
 ---
 
-## 🧪 Running Tests
 
 Run the application's PHPUnit tests with:
 
