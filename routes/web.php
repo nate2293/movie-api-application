@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WelcomeController;
 use Inertia\Inertia;
+use App\Http\Controllers\MovieAssistantController;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
 
@@ -12,6 +13,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('series', [DashboardController::class, 'series'])->name('series');
     Route::get('films', [DashboardController::class, 'films'])->name('films');
     Route::get('new-and-popular', [DashboardController::class, 'newAndPopular'])->name('new-and-popular');
+    Route::post('/movie-assistant', MovieAssistantController::class)
+    ->name('movie-assistant');
     Route::get('search', [DashboardController::class, 'search'])
     ->name('search');
 

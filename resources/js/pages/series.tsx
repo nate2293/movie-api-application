@@ -5,6 +5,7 @@ import SlideTabs from "@/components/slide-tabs";
 import TVCarousel from "@/components/tv-carousel";
 import TVGrid from "@/components/tv-grid";
 import Footer from "@/components/footer";
+import FloatingBottomNav from '@/components/floating-bottom-nav';
 
 type SeriesProps = {
     trendingTV: any[];
@@ -101,6 +102,7 @@ export default function Series({
                 />
 
                 <Footer />
+                <FloatingBottomNav />
             </main>
         </>
     );

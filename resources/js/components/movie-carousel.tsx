@@ -29,16 +29,20 @@ type MovieDetails = Movie & {
     runtime: number | null;
     tagline: string | null;
     origin_country: string[] | null;
-    spoken_languages: {
-        iso_639_1: string;
-        name: string;
-    }[] | null;
+    spoken_languages:
+        | {
+              iso_639_1: string;
+              name: string;
+          }[]
+        | null;
     vote_average: number | null;
     vote_count: number | null;
-    production_companies: {
-        id: number;
-        name: string;
-    }[] | null;
+    production_companies:
+        | {
+              id: number;
+              name: string;
+          }[]
+        | null;
 };
 
 type MovieCarouselProps = {
@@ -46,16 +50,14 @@ type MovieCarouselProps = {
     title: string;
 };
 
-export default function MovieCarousel({
-    movies,
-    title,
-}: MovieCarouselProps) {
+export default function MovieCarousel({ movies, title }: MovieCarouselProps) {
     const [ref, { width }] = useMeasure();
 
     const [offset, setOffset] = useState(0);
 
-    const [selectedMovie, setSelectedMovie] =
-        useState<MovieDetails | null>(null);
+    const [selectedMovie, setSelectedMovie] = useState<MovieDetails | null>(
+        null,
+    );
 
     const openMovie = async (movie: Movie) => {
         const response = await fetch(`/movie/${movie.id}`);
@@ -66,17 +68,12 @@ export default function MovieCarousel({
     };
 
     const CARD_BUFFER =
-        width > BREAKPOINTS.lg
-            ? 3
-            : width > BREAKPOINTS.sm
-              ? 2
-              : 1;
+        width > BREAKPOINTS.lg ? 3 : width > BREAKPOINTS.sm ? 2 : 1;
 
     const CAN_SHIFT_LEFT = offset < 0;
 
     const CAN_SHIFT_RIGHT =
-        Math.abs(offset) <
-        CARD_SIZE * (movies.length - CARD_BUFFER);
+        Math.abs(offset) < CARD_SIZE * (movies.length - CARD_BUFFER);
 
     const shiftLeft = () => {
         if (!CAN_SHIFT_LEFT) {
@@ -107,9 +104,7 @@ export default function MovieCarousel({
                             <button
                                 type="button"
                                 className={`rounded-lg border border-zinc-700 bg-zinc-900 p-1.5 text-2xl text-white transition-opacity ${
-                                    CAN_SHIFT_LEFT
-                                        ? ""
-                                        : "opacity-30"
+                                    CAN_SHIFT_LEFT ? "" : "opacity-30"
                                 }`}
                                 disabled={!CAN_SHIFT_LEFT}
                                 onClick={shiftLeft}
@@ -120,9 +115,7 @@ export default function MovieCarousel({
                             <button
                                 type="button"
                                 className={`rounded-lg border border-zinc-700 bg-zinc-900 p-1.5 text-2xl text-white transition-opacity ${
-                                    CAN_SHIFT_RIGHT
-                                        ? ""
-                                        : "opacity-30"
+                                    CAN_SHIFT_RIGHT ? "" : "opacity-30"
                                 }`}
                                 disabled={!CAN_SHIFT_RIGHT}
                                 onClick={shiftRight}
@@ -163,14 +156,10 @@ export default function MovieCarousel({
                     runtime={selectedMovie.runtime}
                     tagline={selectedMovie.tagline}
                     origin_country={selectedMovie.origin_country}
-                    spoken_languages={
-                        selectedMovie.spoken_languages
-                    }
+                    spoken_languages={selectedMovie.spoken_languages}
                     vote_average={selectedMovie.vote_average}
                     vote_count={selectedMovie.vote_count}
-                    production_companies={
-                        selectedMovie.production_companies
-                    }
+                    production_companies={selectedMovie.production_companies}
                     src={`https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path}`}
                     layoutId={selectedMovie.id.toString()}
                     open={true}
@@ -186,13 +175,7 @@ export default function MovieCarousel({
     );
 }
 
-const MovieCard = ({
-    movie,
-    onOpen,
-}: {
-    movie: Movie;
-    onOpen: () => void;
-}) => {
+const MovieCard = ({ movie, onOpen }: { movie: Movie; onOpen: () => void }) => {
     if (!movie.backdrop_path) {
         return null;
     }

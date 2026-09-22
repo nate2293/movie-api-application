@@ -138,7 +138,7 @@ export default function TVGrid({ shows }: TVGridProps) {
         <section className="relative z-20 px-6 pb-12">
             <div className="mx-auto w-[95%]">
                 <ShimmerBorderCard>
-                    <div className="relative aspect-[16/7] w-full overflow-hidden">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden sm:aspect-video lg:aspect-[16/7]">
                         {show.backdrop_path && (
                             <img
                                 src={`https://image.tmdb.org/t/p/original${show.backdrop_path}`}
@@ -151,7 +151,7 @@ export default function TVGrid({ shows }: TVGridProps) {
                         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent" />
 
                         {/* Series information */}
-                        <div className="absolute bottom-6 left-6 z-10 max-w-xl sm:bottom-10 sm:left-10">
+                        <div className="absolute inset-x-4 bottom-4 z-10 sm:inset-x-auto sm:bottom-8 sm:left-8 sm:max-w-xl md:bottom-10 md:left-10">
                             <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-zinc-300 sm:text-sm">
                                 Trending Series
                             </p>

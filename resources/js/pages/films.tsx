@@ -5,6 +5,7 @@ import MovieCarousel from "@/components/movie-carousel";
 import MovieGrid from "@/components/movie-grid";
 import SlideTabs from "@/components/slide-tabs";
 import Footer from "@/components/footer";
+import FloatingBottomNav from '@/components/floating-bottom-nav';
 
 type FilmsProps = {
     trendingMovies: any[];
@@ -92,6 +93,7 @@ export default function Films({
             </main>
 
             <Footer />
+            <FloatingBottomNav />
         </>
     );
 }

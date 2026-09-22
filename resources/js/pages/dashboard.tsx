@@ -5,7 +5,8 @@ import MovieGrid from "@/components/movie-grid";
 import MovieCarousel from "@/components/movie-carousel";
 import TVCarousel from "@/components/tv-carousel";
 import Footer from "@/components/footer";
-import { TabsFAQ } from "@/components/tabs-faq";
+import FloatingBottomNav from "@/components/floating-bottom-nav";
+import MovieAssistant from "@/components/movie-assistant";
 
 export default function Dashboard({
     movies,
@@ -63,11 +64,23 @@ export default function Dashboard({
 
                 <MovieGrid movies={movies} />
 
-                <MovieCarousel title="Trending Movies" movies={trendingMovies} />
-                <MovieCarousel title="Popular Movies" movies={popularMovieList} />
+                <MovieCarousel
+                    title="Trending Movies"
+                    movies={trendingMovies}
+                />
+                <MovieCarousel
+                    title="Popular Movies"
+                    movies={popularMovieList}
+                />
                 <TVCarousel title="Trending TV" shows={trendingTV} />
-                <MovieCarousel title="Top Rated Movies" movies={topRatedMovies} />
-                <MovieCarousel title="Discover Movies" movies={discoverMovies} />
+                <MovieCarousel
+                    title="Top Rated Movies"
+                    movies={topRatedMovies}
+                />
+                <MovieCarousel
+                    title="Discover Movies"
+                    movies={discoverMovies}
+                />
                 <MovieCarousel title="Discover TV" movies={discoverTv} />
                 <MovieCarousel title="Horror" movies={horrorMovies} />
                 <MovieCarousel title="Comedy" movies={comedyMovies} />
@@ -77,6 +90,8 @@ export default function Dashboard({
                 <MovieCarousel title="Fantasy" movies={fantasyMovies} />
 
                 <Footer />
+                <FloatingBottomNav />
+                <MovieAssistant />
             </main>
         </>
     );

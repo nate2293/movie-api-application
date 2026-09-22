@@ -6,6 +6,7 @@ import SlideTabs from "@/components/slide-tabs";
 import TVCarousel from "@/components/tv-carousel";
 import Footer from "@/components/footer";
 import TVGrid from "@/components/tv-grid";
+import FloatingBottomNav from '@/components/floating-bottom-nav';
 
 type NewAndPopularProps = {
     trendingMovies: any[];
@@ -54,28 +55,29 @@ export default function NewAndPopular({
                 <MovieCarousel title="Top 10 Films" movies={popularMovies} />
 
                 <MovieCarousel
-                    title="Coming This Week - Films"
+                    title="New Films This Week"
                     movies={thisWeekMovies}
                 />
 
                 <TVCarousel
-                    title="Coming This Week - Series"
+                    title="New Series This Week"
                     shows={thisWeekTV}
                 />
 
                 <MovieCarousel
-                    title="Coming Next Week - Films"
+                    title="New Films Incoming"
                     movies={nextWeekMovies}
                 />
 
                 <TVCarousel
-                    title="Coming Next Week - Series"
+                    title="New Series Incoming"
                     shows={nextWeekTV}
                 />
 
                 <TVCarousel title="Top 10 Series" shows={popularTV} />
 
                 <Footer />
+                <FloatingBottomNav />
             </main>
         </>
     );

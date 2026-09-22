@@ -19,7 +19,7 @@ export default function SlideTabs() {
                     opacity: 0,
                 }));
             }}
-            className="relative flex w-fit rounded-full border border-zinc-700 bg-zinc-900 p-1"
+            className="relative hidden w-fit rounded-full border border-zinc-700 bg-zinc-900 p-1 md:flex"
         >
             <Tab
                 setPosition={setPosition}

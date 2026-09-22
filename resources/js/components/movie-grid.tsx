@@ -31,11 +31,11 @@ type MovieGridProps = {
 export default function MovieGrid({ movies }: MovieGridProps) {
     const movie = movies[0];
 
-    const [movieDetails, setMovieDetails] =
-        useState<MovieDetails | null>(null);
+    const [movieDetails, setMovieDetails] = useState<MovieDetails | null>(null);
 
-    const [selectedMovie, setSelectedMovie] =
-        useState<MovieDetails | null>(null);
+    const [selectedMovie, setSelectedMovie] = useState<MovieDetails | null>(
+        null,
+    );
 
     useEffect(() => {
         if (!movie) {
@@ -86,7 +86,7 @@ export default function MovieGrid({ movies }: MovieGridProps) {
         <section className="relative z-20 px-6 pb-12">
             <div className="mx-auto w-[95%]">
                 <ShimmerBorderCard>
-                    <div className="relative aspect-[16/7] w-full overflow-hidden">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden sm:aspect-video lg:aspect-[16/7]">
                         {movie.backdrop_path && (
                             <img
                                 src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
@@ -99,16 +99,16 @@ export default function MovieGrid({ movies }: MovieGridProps) {
                         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent" />
 
                         {/* Movie information */}
-                        <div className="absolute bottom-6 left-6 z-10 max-w-xl sm:bottom-10 sm:left-10">
+                        <div className="absolute inset-x-4 bottom-4 z-10 sm:inset-x-auto sm:bottom-8 sm:left-8 sm:max-w-xl md:bottom-10 md:left-10">
                             <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-zinc-300 sm:text-sm">
                                 Trending
                             </p>
 
-                            <h1 className="text-2xl font-bold text-white sm:text-4xl lg:text-5xl">
+                            <h1 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
                                 {movie.title}
                             </h1>
 
-                            <div className="mt-3 flex flex-wrap items-center gap-2 text-xs font-medium text-zinc-200 sm:text-sm">
+                            <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-white sm:gap-x-3 sm:text-base md:text-lg">
                                 {rating && (
                                     <span className="text-green-400">
                                         {rating}
