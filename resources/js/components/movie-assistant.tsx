@@ -74,7 +74,7 @@ export default function MovieAssistant() {
                     whileHover={{ scale: 1.08 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsOpen(true)}
-                    className="fixed right-6 bottom-6 z-50 hidden h-14 w-14 items-center justify-center rounded-full border border-indigo-300/30 bg-zinc-950 text-indigo-300 shadow-2xl shadow-indigo-500/20 backdrop-blur-md transition-colors hover:bg-zinc-900 md:flex"
+                    className="fixed right-4 bottom-28 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-indigo-300/30 bg-zinc-950 text-indigo-300 shadow-2xl shadow-indigo-500/20 backdrop-blur-md transition-colors hover:bg-zinc-900 md:right-6 md:bottom-6 md:h-14 md:w-14"
                 >
                     <FiMessageCircle className="text-2xl" />
                 </motion.button>
