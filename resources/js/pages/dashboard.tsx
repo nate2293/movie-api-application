@@ -9,6 +9,7 @@ import FloatingBottomNav from "@/components/floating-bottom-nav";
 import MovieAssistant from "@/components/movie-assistant";
 import { motion } from "motion/react";
 import { FiLogOut } from "react-icons/fi";
+import GlowingDivider from "@/components/glowing-divider";
 
 export default function Dashboard({
     movies,
@@ -77,7 +78,10 @@ export default function Dashboard({
                     </motion.button>
                 </nav>
 
-                <MovieGrid movies={movies} />
+                <MovieGrid 
+                movies={movies} />
+
+                {/* <GlowingDivider /> */}
 
                 <MovieCarousel
                     title="Trending Movies"
